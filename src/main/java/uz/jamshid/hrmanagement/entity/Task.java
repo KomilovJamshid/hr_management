@@ -37,5 +37,5 @@ public class Task {
     private UUID taskAssigner;
 
     @Enumerated(EnumType.STRING)
-    private TaskStatus taskStatus = TaskStatus.NEW;
+    private TaskStatus taskStatus;
 }

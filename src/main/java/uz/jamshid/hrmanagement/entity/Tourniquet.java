@@ -7,10 +7,7 @@ import org.springframework.data.annotation.CreatedBy;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 import uz.jamshid.hrmanagement.entity.enums.TourniquetStatus;
 
-import javax.persistence.Entity;
-import javax.persistence.EntityListeners;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.Date;
 import java.util.UUID;
 
@@ -24,7 +21,8 @@ public class Tourniquet {
     @GeneratedValue
     private UUID id;
 
-    private TourniquetStatus status;
+    @Enumerated(EnumType.STRING)
+    private TourniquetStatus status = TourniquetStatus.OUT; //by default employee will be at outside of company
 
     private Date time;
 
